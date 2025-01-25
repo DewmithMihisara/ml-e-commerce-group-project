@@ -1,35 +1,32 @@
-# Inventory Management
-
-# 1. Track product stock level
-# 2. Update stock after order fulfilment
-
-from product import Product  # Import Product class
-
+#import Product class
+from product import Product
 
 class Inventory:
+    
+    # Inventory class initialization
     def __init__(self):
         self.products = {}
-
-
+    
+    #add products to inventory
     def add_product(self, product):
         if product.name in self.products:
             self.products[product.name].quantity += product.quantity
         else:
             self.products[product.name] = product
-
-
-    def remove_product(self, product_name, quantity):
+    
+    #remove products to inventory
+    def remove_product(self, product_name , quantity):
         if product_name in self.products:
             if self.products[product_name].quantity >= quantity:
                 self.products[product_name].quantity -= quantity
             else:
-                print(f"Insufficient stock for {product_name}")
+                print(f"Insufficeint stock for {product_name}")
         else:
-            print(f"Product '{product_name}' not found in inventory.")
-
-
-    def check_stock(self, product_name):
+            print(f"product : ' {product_name} ' is not available in inventory")
+           
+    #check for products to inventory 
+    def check_status(self, product_name):
         if product_name in self.products:
             return self.products[product_name].quantity
         else:
-            return 0
+            return
