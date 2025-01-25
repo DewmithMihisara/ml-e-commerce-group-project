@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from product import Product
 
 class Inventory:
@@ -24,3 +25,9 @@ class Inventory:
             return self.products[product_name].quantity
         else:
             return
+=======
+# Inventory Management
+
+# 1. Track product stock level
+# 2. Update stock after order fulfilment
+>>>>>>> 55d017c5165cc9f949821a3ad026330d12a7d735
